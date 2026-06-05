@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="title" content="PrimeFit Sports & Fitness Center" />
+  <meta name="description" content="Train, play and perform with premium football field bookings, gym membership, personal training and online payment support." />
+  <meta property="og:title" content="PrimeFit Sports & Fitness Center" />
+  <meta property="og:description" content="Book football sessions, join our gym membership plans, manage payments and stay fit with professional trainers." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1200&q=80" />
+  <meta property="og:url" content="https://primefit.example.com" />
+  <title>PrimeFit Sports & Fitness Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-loader" id="pageLoader" aria-hidden="true">
+    <div class="loader-ring"></div>
+    <p>Loading PrimeFit...</p>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home">PrimeFit</a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#booking">Field Booking</a>
+        <a href="#plans">Membership</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+        <a class="button button-secondary" href="admin.html">Admin</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Sports & Fitness Center</span>
+          <h1>Train. Play. Perform.</h1>
+          <p>Book football sessions, register for gym membership and manage your fitness journey online.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#booking">Book Football Field</a>
+            <a class="button button-outline" href="#plans">Join Gym</a>
+          </div>
+          <div class="hero-highlights">
+            <div>
+              <strong>Premium Turf</strong>
+              <p>Professional football field and gym facilities.</p>
+            </div>
+            <div>
+              <strong>Fast Booking</strong>
+              <p>Instant field availability and secure checkout.</p>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="container section-heading">
+        <span class="eyebrow">About PrimeFit</span>
+        <h2>Modern sports and fitness solutions designed to help you perform at your best.</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy">
+          <p>PrimeFit is your trusted sports and fitness center with premium football turf, fully equipped gym facilities and expert training programs. We make booking, membership management and fitness planning fast and effortless.</p>
+          <div class="info-cards">
+            <article class="glass-card">
+              <h3>Professional Equipment</h3>
+              <p>Modern gym machines, free weights and training tools for every fitness goal.</p>
+            </article>
+            <article class="glass-card">
+              <h3>Premium Football Turf</h3>
+              <p>High-quality turf designed for safe, competitive football sessions.</p>
+            </article>
+            <article class="glass-card">
+              <h3>Secure Online Booking</h3>
+              <p>Real-time availability, easy booking and secure payment flows.</p>
+            </article>
+            <article class="glass-card">
+              <h3>Experienced Trainers</h3>
+              <p>Certified coaches and fitness experts supporting every stage of your journey.</p>
+            </article>
+          </div>
+        </div>
+        <div class="mission-vision">
+          <article class="glass-card highlight-card">
+            <h3>Our Mission</h3>
+            <p>Empower athletes and fitness enthusiasts with premium facilities, exceptional training and seamless digital booking experiences.</p>
+          </article>
+          <article class="glass-card highlight-card">
+            <h3>Our Vision</h3>
+            <p>Create a dynamic fitness community where sport, strength and wellness come together in one destination.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section booking" id="booking">
+      <div class="container section-heading">
+        <span class="eyebrow">Field Booking</span>
+        <h2>Reserve your football slot in seconds.</h2>
+      </div>
+      <div class="booking-grid">
+        <div class="schedule-panel glass-card">
+          <div class="panel-header">
+            <h3>Schedule</h3>
+            <label>
+              Select Date
+              <input type="date" id="bookingDate" aria-label="Select booking date" />
+            </label>
+          </div>
+          <div class="schedule-list" id="scheduleList" aria-live="polite"></div>
+          <div class="legend">
+            <span><span class="status-dot available"></span> Available</span>
+            <span><span class="status-dot booked"></span> Booked</span>
+          </div>
+        </div>
+        <form class="booking-form glass-card" id="bookingForm">
+          <h3>Book Your Field</h3>
+          <div class="form-grid">
+            <label>Full Name<input type="text" id="bookName" required placeholder="John Doe" /></label>
+            <label>Phone Number<input type="tel" id="bookPhone" required placeholder="08012345678" /></label>
+            <label>Email<input type="email" id="bookEmail" required placeholder="john@example.com" /></label>
+            <label>Date<input type="date" id="bookDate" required /></label>
+            <label>Time Slot
+              <select id="bookSlot" required>
+                <option value="8AM-10AM">8AM-10AM</option>
+                <option value="10AM-12PM">10AM-12PM</option>
+                <option value="12PM-2PM">12PM-2PM</option>
+                <option value="2PM-4PM">2PM-4PM</option>
+              </select>
+            </label>
+            <label>Duration
+              <select id="bookDuration" required>
+                <option value="2">2 Hours</option>
+                <option value="4">4 Hours</option>
+              </select>
+            </label>
+          </div>
+          <div class="price-summary">
+            <p>Total Price</p>
+            <strong id="bookingTotal">₦15,000</strong>
+          </div>
+          <button type="submit" class="button button-primary">Proceed to Payment</button>
+          <p class="helper-text">Our booking system stores information locally for demo purposes; payments are simulated.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section memberships" id="plans">
+      <div class="container section-heading">
+        <span class="eyebrow">Gym Membership</span>
+        <h2>Choose the plan that matches your fitness goals.</h2>
+      </div>
+      <div class="plans-grid">
+        <article class="plan-card glass-card">
+          <span class="plan-label">Basic</span>
+          <strong class="plan-price">₦15,000<span>/month</span></strong>
+          <ul>
+            <li>Gym Access</li>
+            <li>Locker Access</li>
+          </ul>
+          <button class="button button-outline plan-select" data-plan="Basic">Join Now</button>
+        </article>
+        <article class="plan-card glass-card recommended">
+          <span class="plan-label">Standard</span>
+          <strong class="plan-price">₦25,000<span>/month</span></strong>
+          <ul>
+            <li>Gym Access</li>
+            <li>Locker</li>
+            <li>Trainer Support</li>
+          </ul>
+          <button class="button button-primary plan-select" data-plan="Standard">Join Now</button>
+        </article>
+        <article class="plan-card glass-card">
+          <span class="plan-label">Premium</span>
+          <strong class="plan-price">₦40,000<span>/month</span></strong>
+          <ul>
+            <li>Full Access</li>
+            <li>Personal Trainer</li>
+            <li>Nutrition Plan</li>
+          </ul>
+          <button class="button button-outline plan-select" data-plan="Premium">Join Now</button>
+        </article>
+      </div>
+      <div class="registration-panel glass-card">
+        <h3>Gym Registration</h3>
+        <form id="membershipForm">
+          <div class="form-grid">
+            <label>Full Name<input type="text" id="memberName" required placeholder="Jane Doe" /></label>
+            <label>Email<input type="email" id="memberEmail" required placeholder="jane@example.com" /></label>
+            <label>Phone Number<input type="tel" id="memberPhone" required placeholder="08098765432" /></label>
+            <label>Gender
+              <select id="memberGender" required>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
+            <label>Date of Birth<input type="date" id="memberDob" required /></label>
+            <label>Membership Plan
+              <select id="memberPlan" required>
+                <option value="Basic">Basic</option>
+                <option value="Standard">Standard</option>
+                <option value="Premium">Premium</option>
+              </select>
+            </label>
+          </div>
+          <div class="subscription-panel">
+            <label>Subscription Length
+              <select id="subscriptionLength">
+                <option value="monthly">Monthly</option>
+                <option value="quarterly">Quarterly (10% off)</option>
+                <option value="yearly">Yearly (20% off)</option>
+              </select>
+            </label>
+            <div class="price-summary">
+              <p>Final Subscription Amount</p>
+              <strong id="subscriptionTotal">₦15,000</strong>
+            </div>
+          </div>
+          <button type="submit" class="button button-primary">Register Now</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section payments" id="paymentSupport">
+      <div class="container section-heading">
+        <span class="eyebrow">Payment</span>
+        <h2>Ready for Paystack and Flutterwave integration.</h2>
+      </div>
+      <div class="payment-grid glass-card">
+        <div>
+          <h3>Simulated payment ready</h3>
+          <p>Use the payment modal to preview the checkout flow. Backend integration can be added later with Paystack and Flutterwave.</p>
+        </div>
+        <button class="button button-primary" id="openPaymentModal">Open Payment Modal</button>
+      </div>
+    </section>
+
+    <section class="section location" id="location">
+      <div class="container section-heading">
+        <span class="eyebrow">Location</span>
+        <h2>Find us and head straight to the field.</h2>
+      </div>
+      <div class="map-panel glass-card">
+        <div class="map-frame">
+          <iframe src="https://www.google.com/maps?q=hzBkn2imkAYZ3qxk9&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="PrimeFit location map"></iframe>
+        </div>
+        <div class="map-actions">
+          <a class="button button-outline" href="https://www.google.com/maps/dir/?api=1&destination=hzBkn2imkAYZ3qxk9" target="_blank" rel="noreferrer">Directions</a>
+          <a class="button button-primary" href="https://maps.app.goo.gl/hzBkn2imkAYZ3qxk9" target="_blank" rel="noreferrer">Open in Google Maps</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery" id="gallery">
+      <div class="container section-heading">
+        <span class="eyebrow">Gallery</span>
+        <h2>Browse our football, gym and event spaces.</h2>
+      </div>
+      <div class="gallery-filters">
+        <button class="filter-button active" data-filter="all">All</button>
+        <button class="filter-button" data-filter="football">Football</button>
+        <button class="filter-button" data-filter="gym">Gym</button>
+        <button class="filter-button" data-filter="events">Events</button>
+      </div>
+      <div class="gallery-grid" id="galleryGrid">
+        <article class="gallery-card" data-category="football" data-image="https://images.unsplash.com/photo-1517927033932-b9f8efb4d094?auto=format&fit=crop&w=1200&q=80">
+          <img src="https://images.unsplash.com/photo-1517927033932-b9f8efb4d094?auto=format&fit=crop&w=800&q=80" alt="Football players on turf" />
+          <div class="gallery-caption">Football Action</div>
+        </article>
+        <article class="gallery-card" data-category="gym" data-image="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80">
+          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" alt="Modern gym equipment" />
+          <div class="gallery-caption">Gym Equipment</div>
+        </article>
+        <article class="gallery-card" data-category="events" data-image="https://images.unsplash.com/photo-1549576490-b0b4831ef60a?auto=format&fit=crop&w=1200&q=80">
+          <img src="https://images.unsplash.com/photo-1549576490-b0b4831ef60a?auto=format&fit=crop&w=800&q=80" alt="Fitness event" />
+          <div class="gallery-caption">Training Event</div>
+        </article>
+        <article class="gallery-card" data-category="football" data-image="https://images.unsplash.com/photo-1505842465776-3e2435f1a909?auto=format&fit=crop&w=1200&q=80">
+          <img src="https://images.unsplash.com/photo-1505842465776-3e2435f1a909?auto=format&fit=crop&w=800&q=80" alt="Night football match" />
+          <div class="gallery-caption">Stadium Turf</div>
+        </article>
+        <article class="gallery-card" data-category="gym" data-image="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1200&q=80">
+          <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=80" alt="Personal training session" />
+          <div class="gallery-caption">Personal Training</div>
+        </article>
+        <article class="gallery-card" data-category="events" data-image="https://images.unsplash.com/photo-1526401485004-6f28fc2f9e0d?auto=format&fit=crop&w=1200&q=80">
+          <img src="https://images.unsplash.com/photo-1526401485004-6f28fc2f9e0d?auto=format&fit=crop&w=800&q=80" alt="Fitness event crowd" />
+          <div class="gallery-caption">Club Events</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section testimonials" id="testimonials">
+      <div class="container section-heading">
+        <span class="eyebrow">Testimonials</span>
+        <h2>What our members say about PrimeFit.</h2>
+      </div>
+      <div class="testimonial-carousel glass-card">
+        <button class="carousel-nav prev" id="prevTestimonial" aria-label="Previous testimonial">‹</button>
+        <div class="testimonial-card" id="testimonialCard">
+          <img src="https://images.unsplash.com/photo-1544411437-3f3d45b3b0fb?auto=format&fit=crop&w=400&q=80" alt="Member photo" />
+          <div>
+            <strong id="testimonialName">Amina Johnson</strong>
+            <p id="testimonialReview">PrimeFit gave me the structure I needed. The gym is clean, the coaches are supportive and the booking tool is easy to use.</p>
+            <span id="testimonialContact">amina@example.com</span>
+          </div>
+        </div>
+        <button class="carousel-nav next" id="nextTestimonial" aria-label="Next testimonial">›</button>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container section-heading">
+        <span class="eyebrow">Contact</span>
+        <h2>Reach out for bookings and membership support.</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info glass-card">
+          <h3>Get in touch</h3>
+          <p>Our team is ready to help you reserve the field, join the gym or customize a training program.</p>
+          <ul>
+            <li><strong>Email:</strong> info@primefit.com</li>
+            <li><strong>Phone:</strong> +234 801 234 5678</li>
+            <li><strong>WhatsApp:</strong> +234 801 234 5678</li>
+          </ul>
+          <div class="contact-actions">
+            <a class="button button-outline" href="https://wa.me/2348012345678" target="_blank" rel="noreferrer">WhatsApp</a>
+            <a class="button button-primary" href="tel:+2348012345678">Call Now</a>
+          </div>
+        </div>
+        <form class="contact-form glass-card" id="contactForm">
+          <label>Name<input type="text" id="contactName" required placeholder="Your full name" /></label>
+          <label>Email<input type="email" id="contactEmail" required placeholder="you@example.com" /></label>
+          <label>Phone<input type="tel" id="contactPhone" required placeholder="08012345678" /></label>
+          <label>Message<textarea id="contactMessage" rows="5" required placeholder="How can we help?"></textarea></label>
+          <button type="submit" class="button button-primary">Send Message</button>
+          <p class="helper-text">This contact form is ready for backend integration.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="#home">PrimeFit</a>
+        <p>Sports and fitness center delivering premium bookings, memberships and training programs.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#booking">Booking</a></li>
+          <li><a href="#plans">Membership</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li>Football Field Rental</li>
+          <li>Gym Membership</li>
+          <li>Personal Training</li>
+          <li>Fitness Programs</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="Twitter">TW</a>
+        </div>
+      </div>
+    </div>
+    <div class="site-credit">© 2026 PrimeFit Sports & Fitness Center. All rights reserved.</div>
+  </footer>
+
+  <div class="modal-overlay" id="paymentModal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="closeModal" aria-label="Close payment modal">×</button>
+      <h3 id="modalTitle">Payment Integration</h3>
+      <p>Simulated payment setup for Paystack and Flutterwave readiness.</p>
+      <form id="paymentForm">
+        <label>Amount
+          <input type="number" id="paymentAmount" min="1000" value="15000" required />
+        </label>
+        <label>Email
+          <input type="email" id="paymentEmail" required placeholder="customer@example.com" />
+        </label>
+        <label>Payment Method
+          <select id="paymentMethod" required>
+            <option value="paystack">Paystack</option>
+            <option value="flutterwave">Flutterwave</option>
+          </select>
+        </label>
+        <button type="submit" class="button button-primary">Complete Payment</button>
+      </form>
+      <div class="payment-result" id="paymentResult" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

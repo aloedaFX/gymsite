@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="title" content="PrimeFit Admin Dashboard" />
+  <meta name="description" content="Admin dashboard for managing bookings, memberships and revenue at PrimeFit Sports & Fitness Center." />
+  <meta property="og:title" content="PrimeFit Admin Dashboard" />
+  <meta property="og:description" content="Monitor bookings, active members, revenue and available slots for your sports and fitness center." />
+  <title>PrimeFit Admin Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">PrimeFit Admin</a>
+      <nav class="main-nav" aria-label="Admin navigation">
+        <a href="index.html">Home</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#bookings">Bookings</a>
+        <a href="#members">Members</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section admin-section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">Admin Dashboard</span>
+        <h2>Review bookings, memberships and revenue in one place.</h2>
+      </div>
+
+      <div class="admin-cards-grid">
+        <article class="glass-card admin-card">
+          <h3>Total Bookings</h3>
+          <strong id="totalBookings">0</strong>
+        </article>
+        <article class="glass-card admin-card">
+          <h3>Active Members</h3>
+          <strong id="activeMembers">0</strong>
+        </article>
+        <article class="glass-card admin-card">
+          <h3>Revenue</h3>
+          <strong id="totalRevenue">₦0</strong>
+        </article>
+        <article class="glass-card admin-card">
+          <h3>Available Slots Today</h3>
+          <strong id="availableSlots">0</strong>
+        </article>
+      </div>
+
+      <section class="section" id="bookings">
+        <div class="section-heading">
+          <h2>Booking Management</h2>
+        </div>
+        <div class="glass-card admin-table-card">
+          <table class="data-table" aria-label="Booking management table">
+            <thead>
+              <tr>
+                <th>Customer</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="bookingTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" id="members">
+        <div class="section-heading">
+          <h2>Membership Management</h2>
+        </div>
+        <div class="glass-card admin-table-card">
+          <table class="data-table" aria-label="Membership management table">
+            <thead>
+              <tr>
+                <th>Member</th>
+                <th>Plan</th>
+                <th>Payment</th>
+                <th>Expiry</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="memberTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="index.html">PrimeFit</a>
+        <p>Admin dashboard for sports and fitness center operations.</p>
+      </div>
+    </div>
+    <div class="site-credit">© 2026 PrimeFit Sports & Fitness Center. Dashboard access only.</div>
+  </footer>
+
+  <script src="admin.js"></script>
+</body>
+</html>
